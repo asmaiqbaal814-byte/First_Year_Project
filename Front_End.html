@@ -12,16 +12,24 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
+        function setActiveSearchButton(buttonId) {
+            document.querySelectorAll('.search-option').forEach(btn => {
+                btn.classList.toggle('active', btn.id === buttonId);
+            });
+        }
+
         function showText() {
             document.getElementById("diseaseBox").style.display = "block";
             document.getElementById("additionalFilters").style.display = "block";
             document.getElementById("diseaseCombo").style.display = "none";
+            setActiveSearchButton('textBtn');
         }
 
         function showCombo() {
             document.getElementById("diseaseCombo").style.display = "block";
             document.getElementById("additionalFilters").style.display = "block";
             document.getElementById("diseaseBox").style.display = "none";
+            setActiveSearchButton('comboBtn');
         }
 
         let diseases = [];
@@ -101,8 +109,8 @@ function diseaseDescription() {
     <div class="form-group">
         <p>How would you like to search?</p>
         <div id="search_options">
-        <button type="button" onclick="showCombo()">Combo Box</button>
-        <button type="button" onclick="showText()">Text Box</button>
+        <button type="button" class="search-option" id="comboBtn" onclick="showCombo()">Combo Box</button>
+        <button type="button" class="search-option" id="textBtn" onclick="showText()">Text Box</button>
         </div>
         <!-- <br><br> -->
      <div  id="user-inputs" class="input-box">
