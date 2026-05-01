@@ -77,10 +77,11 @@ function removeDisease(disease, element) {
 function diseaseDescription() {
     const VegORnonVeg = document.getElementById("VegORnonVeg").value;
     const Age_Group = document.getElementById("Age_Group").value;
+    const allergies = document.getElementById("allergies").value;
 
-    if (diseases.length > 0 && VegORnonVeg !== '' && Age_Group !== '') {
+    if (diseases.length > 0 && Age_Group !== '') {
         const diseaseList = diseases.join(', ');
-        const description = `Foods for ${diseaseList} with ${VegORnonVeg} diet for ${Age_Group} age group.`;
+        const description = `Diseases: ${diseaseList} \n Age Group: ${Age_Group}\n Diet: ${VegORnonVeg || 'None'}\n Allergies: ${allergies || 'None'}`;
         document.getElementById("diseaseDescription").innerText = description;
         document.getElementById("diseaseDescription").style.display = "block";
     } else {
@@ -114,7 +115,7 @@ function diseaseDescription() {
         <section id="diseaseCombo" class="search-box" style="display: none;">
             <label for="diseaseInput">Select from combo box:</label><br>
             <select id="diseaseComboBox" onchange="diseaseDescription()">
-                <option value="">Disease Type</option>
+                <option value="">--Disease Type--</option>
                 <option value="Dengue">Dengue ඩෙංගු டெங்கு</option>
                 <option value="Malaria">Malaria මැලේරියා மலேரியா</option>
                 <option value="Chikungunya">Chikungunya චිකුන්ගුනියා சிக்குன்குனியா</option>
@@ -154,25 +155,31 @@ function diseaseDescription() {
         </section>
         
         <section  class="additionalFilters" id="additionalFilters" style="display: none;">
-            <select id="VegORnonVeg" onchange="diseaseDescription()">
-                <option value="">Food Type</option>
-                <option value="Vegetarian">Vegetarian නිර්මාංශ</option>
-                <option value="Non-Vegetarian">Non-Vegetarian මාංශ භක්ෂක</option>
-            </select>
+
             <select id="Age_Group" onchange="diseaseDescription()">
-                <option value="">Age Group</option>
+                <option value="">--Age Group--</option>
                 <option value="child">Child ළමයා</option>
                 <option value="adult">Adult වැඩිහිටි</option>
                 <option value="senior">Senior මහලු</option>
             </select>
-            <!-- <select id="Allergy" onchange="diseaseDescription()">
-                <option value="">Allergy</option>
-                <option value="Peanuts">Peanuts කජු</option>
-                <option value="Dairy">Dairy කිරි</option>
-                <option value="Gluten">Gluten ග්ලූටන්</option>
-                <option value="Shellfish">Shellfish මුහුදු ආහාර</option>
-                <option value="Soy">Soy සෝයා</option>
-            </select> -->
+
+            <select id="VegORnonVeg" onchange="diseaseDescription()">
+                <option value="">--Food Type--</option>
+                <option value="Vegetarian">Vegetarian නිර්මාංශ</option>
+                <option value="Non-Vegetarian">Non-Vegetarian මාංශ භක්ෂක</option>
+            </select>
+        
+            <select id="allergies" onchange="diseaseDescription()">
+                 <option value="">-- Select Allergy --</option>
+                <option value="seafood">Seafood (මුහුදු ආහාර) (கடல் உணவு)</option>
+                 <option value="eggs">Eggs (බිත්තර) (முட்டை)</option>
+                 <option value="milk">Milk / Dairy (කිරි / කිරි නිෂ්පාදන) (பால் / பால் பொருட்கள்)</option>
+                 <option value="peanuts">Peanuts (රටකජු) (வேர்க்கடலை)</option>
+                 <option value="wheat">Wheat (ගෝධූම) (கோதுமை)</option>
+                 <option value="soy">Soy (සෝයා) (சோயா)</option>
+                 <option value="coconut">Coconut (පොල්) (தேங்காய்)</option>
+                 <option value="spices">Spices / Additives (මසාලා / එකතු කිරීම්) (மசாலா / சேர்க்கைகள்)</option>
+            </select>
         </section>
      </div> 
 
