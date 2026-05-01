@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedMeal</title>
+    <link rel="icon" href="images\titleLogo.png" type="image/png" sizes="19x19">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Noto+Sans+Sinhala&display=swap" rel="stylesheet">
@@ -76,6 +77,13 @@ function AddDisease() {
     diseaseDescription();
 }
 
+function handleDiseaseInputKey(event) {
+    if (event.key === 'Enter' && diseases.length === 0) {
+        event.preventDefault();
+        AddDisease();
+    }
+}
+
 function removeDisease(disease, element) {
     diseases = diseases.filter(d => d !== disease);
     element.parentElement.remove();
@@ -116,13 +124,13 @@ function diseaseDescription() {
      <div  id="user-inputs" class="input-box">
         <section id="diseaseBox" class="search-box" style="display: none;">
             <label for="diseaseInput">Search by disease or keyword:</label><br>
-            <input id="diseaseInput" type="text" placeholder="Enter disease name or symptom..." oninput="diseaseDescription()">
+            <input id="diseaseInput" type="text" placeholder="Enter disease name or symptom..." oninput="diseaseDescription()" >
             <button type="button" id="AddDiseaseButton" onclick="AddDisease()"></button>
         </section>
 
         <section id="diseaseCombo" class="search-box" style="display: none;">
             <label for="diseaseInput">Select from combo box:</label><br>
-            <select id="diseaseComboBox" onchange="diseaseDescription()">
+            <select id="diseaseComboBox" onchange="diseaseDescription()" >
                 <option value="">--Disease Type--</option>
                 <option value="Dengue">Dengue ඩෙංගු டெங்கு</option>
                 <option value="Malaria">Malaria මැලේරියා மலேரியா</option>
