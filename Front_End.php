@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,8 +156,18 @@ function diseaseDescription() {
 
 <body>
     <nav class="login-btn">
-         <button type="button" id="signin" onclick="navigateToSignIn()">  
-    </nav>    
+    <?php if (isset($_SESSION['user_name'])): ?>
+        <!-- Show user name -->
+        <p class="user-name">
+         👤<?php echo $_SESSION['user_name']; ?>
+        </p>
+    <?php else: ?>
+        <!-- Show sign in button -->
+        <button type="button" id="signin" onclick="navigateToSignIn()">
+        </button>
+    <?php endif; ?>
+    </nav>
+     <!-- <button type="button" id="signin" onclick="navigateToSignIn()">     -->
     <div class="container">
         <h1><img class="logo" src="images/logo.png" alt="MedMeal Logo"><span class="medi">Medi</span><span class="meal">ආහාර</span></h1>
         <p>Personalized Sri Lankan meal plans for better health.</p>

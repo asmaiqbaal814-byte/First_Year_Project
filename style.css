@@ -271,6 +271,28 @@ footer {
     gap: 20px;
 }
 
+.user-name {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+
+    background: #f4f8fb;
+    padding: 8px 16px;
+    border-radius: 25px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .container {
