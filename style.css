@@ -4,6 +4,56 @@ body {
     background-color:#e7fffa;
 }
 
+/* From Uiverse.io by alexmaracinaru */ 
+.login-btn #signin {
+  position: relative;
+  margin-left: 30cm;
+  padding: 12px 20px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  top: 20px;
+}
+
+.login-btn #signin:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #019C78;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+  background-image: url('images/login1.png');
+  background-size: cover;
+  color: white;
+}
+
+.login-btn #signin:hover:before {
+  width: 80px;
+  height: 45px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  background: #019C78;
+  content: "Sign In";
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-btn #signin:hover svg {
+  transform: translateX(0);
+}
+
+.login-btn #signin:active {
+  transform: scale(0.95);
+}
+
+
 .container {
     text-align: center;
     margin-top: 30px;
@@ -77,6 +127,7 @@ p {
 .search-option:hover,
 button:hover {
     background-color: #019C78;
+    transform: scale(1);
 }
 button:active {
     background-color: #019C78;
@@ -144,20 +195,20 @@ footer {
     cursor: pointer;
     background-image: url('images/plus.png');
     background-size: cover;
-    margin-top: 5px;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
     border: 0;
     box-shadow: rgba(155, 219, 217, 0.05) 0 0 8px;
-    transition: 0.5s ease;
+    transition: all 0.2s ease;
+    margin-top: -5px;
 }
+
 .input-box #AddDiseaseButton:hover {
     box-shadow: rgb(24, 220, 174) 0px 7px 29px 0px;
 }
 .input-box #AddDiseaseButton:active {
   box-shadow: rgb(3, 180, 138) 0px 0px 0px 0px;
-  transform: translateY(10px);
-  transition: 100ms;
+  transform: scale(0.9);
 }
 
 
