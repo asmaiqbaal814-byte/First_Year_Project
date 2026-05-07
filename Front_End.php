@@ -51,7 +51,7 @@ function AddDisease() {
 
     let finalValue = "";
 
-    // ✅ choose which one to use
+    //  choose which one to use
     if (textValue !== "") {
         finalValue = textValue;
     } else if (comboValue !== "") {
@@ -61,13 +61,13 @@ function AddDisease() {
         return;
     }
 
-    // ✅ prevent duplicates
+    //  prevent duplicates
     if (diseases.includes(finalValue)) return;
 
-    // ✅ add to array
+    //  add to array
     diseases.push(finalValue);
 
-    // ✅ create UI chip
+    // create UI chip
     let newItem = document.createElement("div");
     newItem.className = "disease-item";
 
@@ -99,36 +99,7 @@ function removeDisease(disease, element) {
     diseaseDescription();
 }
 
-// function getMealPlan() {
-//    //check if user added any diseases
-//    if(diseases.length===0){
-//     alert("please add antleast one disease!");
-//     return;
-//    }
 
-//    document.getElementById("results").innerHTML = "⏳ Finding best foods for you...";
-
-//    const diseaseString=diseases.join(',');
-
-//    fetch('get_food.php?diseases=${diseaseString}')
-//    .then(response => response.json())
-//    .then(data => {
-
-//     let goodList = data.good.map(food => `<li>${food}</li>`).join('');
-//     let badList = data.bad.map(food => `<li>${food}</li>`).join('');
-//     document.getElementById("results").innerHTML = `
-//     <h3>🟢 Foods You SHOULD Eat:</h3>
-//                 <ul>${goodList}</ul>
-//     <h3>🔴 Foods You Should AVOID:</h3>
-//                 <ul>${badList}</ul>
-//     `;
-//    })
-
-//     .catch(error => {
-//             document.getElementById("results").innerHTML = 
-//                 "❌ Something went wrong! Check PHP is running.";
-//         });
-// }
 
 function diseaseDescription() {
     const VegORnonVeg = document.getElementById("VegORnonVeg").value;
@@ -158,9 +129,14 @@ function diseaseDescription() {
     <nav class="login-btn">
     <?php if (isset($_SESSION['user_name'])): ?>
         <!-- Show user name -->
+         <!-- //want to make this as button ,when user click that it should direct the user to user profile page -->
         <p class="user-name">
          👤<?php echo $_SESSION['user_name']; ?>
         </p>
+    <?php elseif(isset($_SESSION['user_name'])):?>
+        <p class="user-name">
+         👤<?php echo $_SESSION['user__name']; ?>
+        </p> 
     <?php else: ?>
         <!-- Show sign in button -->
         <button type="button" id="signin" onclick="navigateToSignIn()">
