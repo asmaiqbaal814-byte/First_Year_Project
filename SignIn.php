@@ -15,7 +15,7 @@ include 'database.php';
      //vertify password
     if($password == $row['password'] && $email == $row['email']){
         // $_SESSION['user__name']=$name;
-        // $_SESSION['user_email']=$email;
+        $_SESSION['user_email']=$email;
         // $_SESSION['user_password']=$password;
         header("Location: Front_End.php");
         exit();

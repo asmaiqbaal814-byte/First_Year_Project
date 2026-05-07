@@ -133,9 +133,9 @@ function diseaseDescription() {
         <p class="user-name">
          👤<?php echo $_SESSION['user_name']; ?>
         </p>
-    <?php elseif(isset($_SESSION['user_name'])):?>
+    <?php elseif(isset($_SESSION['user_email'])):?>
         <p class="user-name">
-         👤<?php echo $_SESSION['user__name']; ?>
+        👤 <?php echo substr($_SESSION['user_email'], 0, 6); ?>
         </p> 
     <?php else: ?>
         <!-- Show sign in button -->
